@@ -66,7 +66,15 @@ void deleteAtIndex(Node* h, int index){
 //delete last node
 void deleteAtEnd(Node* h)
 {
-  
+  Node* p=h;
+  Node* q=h->next;
+  while(q->next!=NULL)
+  { 
+    p=p->next;
+    q=q->next;
+  }
+  p->next=NULL;
+  delete q;
 }
 
 
@@ -97,4 +105,9 @@ int main()
    deleteAtIndex(head,2);
    cout<<endl;
    print(head); //2->123->4->
+   deleteAtEnd(head);
+   cout<<endl;
+   print(head); //2->123->
+
+
 }
