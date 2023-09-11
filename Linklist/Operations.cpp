@@ -76,6 +76,18 @@ void deleteAtEnd(Node* h)
   p->next=NULL;
   delete q;
 }
+//delete element with given value
+void deleteByValue(Node* h, int d)
+{
+  Node* p=h;
+  Node* q=h->next;
+  while(q->data!=d && q->next!=NULL){
+    p=p->next;
+    q=q->next;
+  }
+  p->next=q->next;
+  delete q;
+}
 
 
 //print
@@ -108,6 +120,7 @@ int main()
    deleteAtEnd(head);
    cout<<endl;
    print(head); //2->123->
-
-
+  deleteByValue(head,123);
+  cout<<endl;
+   print(head); //2->
 }
