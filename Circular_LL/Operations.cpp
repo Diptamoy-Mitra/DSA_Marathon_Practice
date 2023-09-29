@@ -68,10 +68,6 @@ void deletionAtHead(Node* &head){
   temp->next=head->next;
   head=head->next;
   delete t;
-
-  
-
-
 }
 //Deletion
 void deletion(Node* &head, int pos){
